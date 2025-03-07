@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios'; // Import axios
 import "./CreateAccount.css"; // Import the CSS file
 
+const API_URL = process.env.REACT_APP_API_URL;
+axios.get(`${API_URL}/api/users`)
+  .then(response => console.log(response.data))
+  .catch(error => console.error(error));
+
 const CreateAccount = () => {
   const navigate = useNavigate();
 
